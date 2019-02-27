@@ -237,7 +237,8 @@ const populateRecord = (item, action = '') => {
     viewBtn.onclick = viewModal(item);
     vData.append(viewBtn);
     row.append(vData);
-    document.querySelector('.empty').innerHTML = '';
+    const empty = document.querySelector('#emptyRow');
+    if (empty) empty.remove();
 
     if (action === 'edit') return false;
     if (action === 'prepend') return table.prepend(row);
@@ -307,7 +308,7 @@ const deleteProduct = async (button, product) => {
         return false;
     }
     products.pop(product);
-    if (!products.length) setEmptyRow();
+    if (!products.length) setEmptyRow(5);
     $(`#item-${product.id}`).remove();
     $('#dialogModal .modal-close').click()
 }

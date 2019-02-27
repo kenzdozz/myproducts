@@ -1,6 +1,10 @@
 # Myproducts
 A nodejs app to manage products, with API endpoints to create, list all products and get a single product.
 
+### Features
+- Express - Server
+- SQLite - Database
+
 ## Instructions to install
 ### Requirements
 - Nodejs & NPM - Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser. NPM is Node Package Manager.
@@ -14,17 +18,19 @@ When this is done, run
 > - `cd myproducts`
 > - `npm install`
 
-### Features
-- Express - Server
-- SQLite - Database
-
-## Testing and Usage
 To start the app run
 > `npm start`
 
+## Testing and Usage
+### On Local
 On your browser, a visit to `http://localhost:3033/` takes you to UI of the app. (You can change the port on app.js).
 
 The API is hosted on `http://localhost:3033/api/v1`
+
+### On Heroku
+> - [Click here to visit My Products](https://productz.herokuapp.com/)
+
+The API is hosted on `https://productz.herokuapp.com/api/v1`
 
 A POST request to `/products` with form data `name, category, price, description, color, image` creates a new record and returns a JSON response object with properties `status` response status code and `data` the newly created record.
 
