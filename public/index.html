@@ -1,0 +1,141 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My Products</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div id="loadBar"></div>
+    <div class="container header">
+      <div class="logo-div">
+        <h2 style="margin: 0.4rem 0;">My Products</h2>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <span class="nav-toggle hide"><i class="fa fa-bars"></i></span>
+    <div class="container d-row">
+      <div class="sidebar-right">
+        <ul>
+          <li><button data-modal="manageProduct" class="toggle-modal btn btn-green">Add a product</button></li>
+        </ul>
+      </div>
+      <div class="content">
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="load"></div>
+          <div class="empty"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="dialogModal" class="modal">
+    <div class="modal-content">
+      <h4 class="modal-title">Continue with action?</h4>
+      <span class="alert error"></span>
+      <div class="input-group">
+        <button class="btn btn-red delete" type="button">Continue</button>
+        <button type="button" class="modal-close ml-auto btn btn-green">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="viewProduct" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="d-flex item">
+        <div class="col-2">
+            <img src="./images/upload.webp" alt="">
+        </div>
+        <div class="details col-2">
+            <h3 class="name">UA Curry 3</h3>
+            <em class="category mt-0">Fashion</em>
+            <p class="description">This is the best shoe of 21st Century</p>
+            <p class="color">Color: Red</p>
+            <h3 class="price">$ 98.00</h3>
+        </div>
+    </div>
+    </div>
+  </div>
+
+  <div id="manageProduct" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <form action="" method="POST">
+        <h2 class="modal-title">Add a Product</h2>
+        <div class="input-group">
+          <label for="image">Image:</label>
+          <div class="upload-image">
+            <img class="remove" src="./images/remove.png" alt="Remove">
+            <img class="upload" src="./images/upload.webp" alt="Upload Image">
+          </div>
+          <input class="hidden" type="file" name="image" id="image" accept="image/*">
+          <span class="form-error"></span>
+        </div>
+        <div class="input-group">
+          <label class="req" for="name">Product name:</label>
+          <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
+          <span class="form-error"></span>
+        </div>
+        <div class="input-group">
+          <label class="req" for="description">Description:</label>
+          <textarea class="form-control" name="description" id="description" placeholder="Product description" required></textarea>
+          <span class="form-error"></span>
+        </div>
+        <div class="input-group">
+          <label class="req" for="price">Price:</label>
+          <input type="number" class="form-control" name="price" id="price" placeholder="Product price" required>
+          <span class="form-error"></span>
+        </div>
+        <div class="input-group">
+          <label for="category">Category:</label>
+          <select class="form-control" name="category" id="category">
+            <option value="">Choose one...</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Computers">Computers</option>
+          </select>
+          <span class="form-error"></span>
+        </div>
+        <div class="input-group">
+          <label for="color">Color:</label>
+          <select class="form-control" name="color" id="color">
+            <option value="">Choose one...</option>
+            <option value="Red">Red</option>
+            <option value="Pink">Pink</option>
+            <option value="Black">Black</option>
+          </select>
+          <span class="form-error"></span>
+        </div>
+        <div class="input-group">
+          <button class="btn btn-green" type="submit">Save</button>
+          <button type="button" class="modal-close ml-auto btn btn-red">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./js/script.js"></script>
+</body>
+
+</html>
