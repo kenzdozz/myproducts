@@ -278,6 +278,7 @@ $('#manageProduct form').onsubmit = async function (event) {
     } else products.unshift(response.data);
     populateRecord(response.data, isEdit ? 'edit' : 'prepend');
     $('#manageProduct .modal-close').click()
+    if (!isEdit) previewProduct(response.data);
 }
 
 const editModal = (product) => () => {
@@ -319,6 +320,10 @@ const deleteModal = (product) => () => {
 }
 
 const viewModal = (product) => () => {
+    previewProduct(product);
+}
+
+const previewProduct = (product) => {
     triggerModal('viewProduct');
     const pModal = $('#viewProduct');
     pModal.querySelector('img').src = `.${product.image}`;
